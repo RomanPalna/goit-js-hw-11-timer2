@@ -25,18 +25,23 @@ const rewerseTimer = {
 
     startNow() {
         setInterval(() => {
+            timerSet()
+     }, 1000)
+}
+}
+
+function timerSet() {
             const currentTime = Date.now()
-            const timer =   this.targetDate -currentTime
+            const timer = rewerseTimer.targetDate - currentTime
             const { days, hours, mins, secs } = getTime(timer)
 
             refs.daysField.textContent = days
             refs.hoursField.textContent = hours
             refs.minsField.textContent = mins
             refs.secsField.textContent = secs
-     }, 1000)
-}
 }
 
+
+timerSet()
 rewerseTimer.startNow()
-
 
